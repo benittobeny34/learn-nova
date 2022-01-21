@@ -14,4 +14,14 @@ class Post extends Model
         'publish_until' => 'datetime',
         'is_published' => 'boolean'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
